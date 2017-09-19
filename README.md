@@ -1,6 +1,6 @@
 # ForkJoinFramework
 The fork/join framework provides a very straightforward and intuitive structure to implement recursive and **divide and conquer** problems that can be solved concurrently. You start with the big problem and break it down in smaller work units until each work unit can be solved directly.   
-***The algorithm takes this form:**
+**The algorithm takes this form:**
 ```
 Result solve(Problem problem) {
   if (problem is small)
