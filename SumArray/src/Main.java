@@ -8,7 +8,7 @@ public class Main {
         int REPEATS =10;
         Main myMain = new Main();
 
-        double[] arry = myMain.createArray(1000_000_00);
+        int [] arry = myMain.createArray(1000_000_00);
         //myMain.printArray(arry);
 
      /*Computing the sum sequentialy*/
