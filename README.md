@@ -22,4 +22,4 @@ As the ForkJoin Framework is standard in Java 8 and Java 7, you can view the off
 - **ForkJoinTask<V>:** superclass of RecursiveTask<V> and RecursiveAction. fork and join are methods defined in this class.   
 ### In this Repo:
 - **SumArray:** performing the sum of an array in sequentail & in parallel (using ForkJoin framework) and calculating the overall speedup.
-- **MergeSort:** parallel in place merge sort.
+- **MergeSort:** parallel merge sort, with calculating the total speedup between regular merge sort & parallel merge sort.
