@@ -33,25 +33,25 @@ public class Main {
 
     /*The parallel version */
         //int numTasks=Runtime.getRuntime().availableProcessors();
-        int numTasks=2;
+        int numTasks = 2;
         ForkJoinPool pool = new ForkJoinPool();
-        pool.submit(new ParallelSort(parSortedArry, 0, parSortedArry.length-1, numTasks)).join();
+        pool.submit(new ParallelSort(parSortedArry, 0, parSortedArry.length - 1, numTasks)).join();
 
-       // System.out.println(Arrays.toString(parSortedArry));
+        // System.out.println(Arrays.toString(parSortedArry));
 
         final long parStartTime = System.currentTimeMillis();
-        for (int r=0; r<REPEATS; r++){
-            pool.submit(new ParallelSort( parSortedArry, 0, parSortedArry.length-1, numTasks)).join();
+        for (int r = 0; r < REPEATS; r++) {
+            pool.submit(new ParallelSort(parSortedArry, 0, parSortedArry.length - 1, numTasks)).join();
         }
         final long parEndTime = System.currentTimeMillis();
         final long parTime = (parEndTime - parStartTime) / REPEATS;
 
-        System.out.println("The parallel merge sort took "  + parTime + " ms");
+        System.out.println("The parallel merge sort took " + parTime + " ms");
 
 
         //* Overall SpeedUp*//
-       double speedup = (double)seqTime / (double)parTime;
-        System.out.println("The overall Speedup: "+speedup);
+        double speedup = (double) seqTime / (double) parTime;
+        System.out.println("The overall Speedup: " + speedup);
 
     }
 

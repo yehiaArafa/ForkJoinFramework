@@ -23,7 +23,7 @@ public class ParallelSort extends RecursiveAction {
         }
 
         int mid = startIndex + ((endIndex - startIndex) / 2);
-        invokeAll(new ParallelSort(arry, startIndex, mid, this.taskThreshold), new ParallelSort(arry, (mid+1), endIndex, this.taskThreshold));
+        invokeAll(new ParallelSort(arry, startIndex, mid, this.taskThreshold), new ParallelSort(arry, (mid + 1), endIndex, this.taskThreshold));
         merge(arry, startIndex, mid, endIndex);
 
     }

@@ -22,7 +22,7 @@ public class ParallelSumArray extends RecursiveTask<Double> {
             }
             return sum;
         } else { // divide the problem into parallel tasks
-            
+
             int mid = this.startIndex + ((this.endIndex - this.startIndex) / 2);
             ParallelSumArray left = new ParallelSumArray(this.arry, this.startIndex, mid, this.taskThreshold);
             ParallelSumArray right = new ParallelSumArray(this.arry, mid, this.endIndex, this.taskThreshold);
