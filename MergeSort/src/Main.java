@@ -3,29 +3,28 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        int REPEATS =10;
+        int REPEATS = 10;
         Main myMain = new Main();
 
-        int [] unSortedArry = myMain.createArray(10);
-        int[] regSortedArry=unSortedArry;
-        int[] parSortedArry=unSortedArry;
+        int[] unSortedArry = myMain.createArray(1000_000);
+        int[] regSortedArry = unSortedArry;
+        int[] parSortedArry = unSortedArry;
 
-        myMain.printUnSortedArray(unSortedArry);
-
+        //myMain.printArray(unSortedArry);
 
         /*The regular merge sort*/
         RegularSort regMergeSort = new RegularSort();
-        regMergeSort.sort(regSortedArry, new int [regSortedArry.length], 0, unSortedArry.length);
+        regMergeSort.sort(regSortedArry, 0, unSortedArry.length - 1);
 
         final long seqStartTime = System.currentTimeMillis();
-        for (int r=0; r<REPEATS; r++){
-            regMergeSort.sort(unSortedArry, new int [regSortedArry.length],0, unSortedArry.length);
+        for (int r = 0; r < REPEATS; r++) {
+            regMergeSort.sort(unSortedArry, 0, unSortedArry.length - 1);
         }
+
         final long seqEndTime = System.currentTimeMillis();
         final long seqTime = (seqEndTime - seqStartTime) / REPEATS;
 
-        myMain.printSortedArray(regSortedArry);
-
+        myMain.printArray(regSortedArry);
         System.out.println("Regular merge sort took: " + seqTime + " ms");
 
 
@@ -50,8 +49,8 @@ public class Main {
 */
     }
 
-    private int [] createArray(int n) {
-        final int [] input = new int[n];
+    private int[] createArray(int n) {
+        final int[] input = new int[n];
         final Random rand = new Random(314);
         for (int i = 0; i < n; i++) {
             input[i] = rand.nextInt(100);
@@ -63,15 +62,7 @@ public class Main {
         return input;
     }
 
-    private void printUnSortedArray(int[] arry) {
-        System.out.println();
-        for (int i = 0; i < arry.length; i++) {
-            System.out.print(arry[i] + " ");
-        }
-        System.out.println();
-    }
-
-    private void printSortedArray(int [] arry) {
+    private void printArray(int[] arry) {
         System.out.println();
         for (int i = 0; i < arry.length; i++) {
             System.out.print(arry[i] + " ");
@@ -80,5 +71,5 @@ public class Main {
     }
 
 
-    }
+}
 
