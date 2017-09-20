@@ -24,28 +24,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParallelSort.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ParallelSort.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegularSort.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RegularSort.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -184,12 +162,12 @@
       <option name="presentableId" value="Default" />
       <updated>1505852038020</updated>
       <workItem from="1505852039289" duration="2905000" />
-      <workItem from="1505930722118" duration="8670000" />
+      <workItem from="1505930722118" duration="8734000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11575000" />
+    <option name="totallyTimeSpent" value="11639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="784" extended-state="0" />
