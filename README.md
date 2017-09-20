@@ -16,7 +16,7 @@ Result solve(Problem problem) {
 As the ForkJoin Framework is standard in Java 8 and Java 7, you can view the official documentation [here](https://docs.oracle.com/javase/tutorial/essential/concurrency/forkjoin.html) and the javadoc for all subclasses in the ForkJoin framework [here](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ForkJoinTask.html).
 
 ## (1) Task parallelism
-Task parallelism focuses on distributing tasks—concurrently performed by processes or threads—across different processors. You can consider the fork/join framework if you want to perform some ***task parallelism*** on your project. Thus dividing each your program into asynchronous tasks operating in parallel. 
+Task parallelism focuses on distributing tasks concurrently and execute those tasks by processes or threads across different processors. You can consider the fork/join framework if you want to perform some ***task parallelism*** on your project. Thus dividing each your program into asynchronous tasks operating in parallel. 
  ### There are only 2-4 classes you need to know about to perform parallel tasks:
 - **ForkJoinPool:** An instance of this class is used to run all your fork-join tasks in the whole program.
 - **RecursiveTask(V):** You run a subclass of this in a pool and have it return a result.
