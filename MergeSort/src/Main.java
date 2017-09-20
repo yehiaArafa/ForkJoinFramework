@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.ForkJoinPool;
 
 public class Main {
 
@@ -6,7 +8,7 @@ public class Main {
         int REPEATS = 10;
         Main myMain = new Main();
 
-        int[] unSortedArry = myMain.createArray(1000_000);
+        int[] unSortedArry = myMain.createArray(1000_00);
         int[] regSortedArry = unSortedArry;
         int[] parSortedArry = unSortedArry;
 
@@ -24,29 +26,33 @@ public class Main {
         final long seqEndTime = System.currentTimeMillis();
         final long seqTime = (seqEndTime - seqStartTime) / REPEATS;
 
-        myMain.printArray(regSortedArry);
+        //myMain.printArray(regSortedArry);
         System.out.println("Regular merge sort took: " + seqTime + " ms");
 
 
 
     /*The parallel version */
-       /* //int numTasks=Runtime.getRuntime().availableProcessors();
-        int numTasks=100;
-        double parallelSum = new ParallelSort(arry,0,arry.length,numTasks).compute();
+        //int numTasks=Runtime.getRuntime().availableProcessors();
+        int numTasks=2;
+        ForkJoinPool pool = new ForkJoinPool();
+        pool.submit(new ParallelSort(parSortedArry, 0, parSortedArry.length-1, numTasks)).join();
+
+       // System.out.println(Arrays.toString(parSortedArry));
 
         final long parStartTime = System.currentTimeMillis();
         for (int r=0; r<REPEATS; r++){
-            new ParallelSumArray(arry,0,arry.length,numTasks).compute();;
+            pool.submit(new ParallelSort( parSortedArry, 0, parSortedArry.length-1, numTasks)).join();
         }
         final long parEndTime = System.currentTimeMillis();
         final long parTime = (parEndTime - parStartTime) / REPEATS;
 
-        System.out.println("The parallel sum is: " + parallelSum + ", It took: " + parTime + " ms");
+        System.out.println("The parallel merge sort took "  + parTime + " ms");
 
-        *//* Overall SpeedUp*//*
-        double speedup = (double)seqTime / (double)parTime;
+
+        //* Overall SpeedUp*//
+       double speedup = (double)seqTime / (double)parTime;
         System.out.println("The overall Speedup: "+speedup);
-*/
+
     }
 
     private int[] createArray(int n) {
